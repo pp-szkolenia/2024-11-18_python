@@ -27,11 +27,3 @@
 4. Okolo 14:30 - 15:00: 10 minut
 
 
-
-
-## Virtualenv
-```
-python -m venv venv   # stworzenie środowiska o nazwie venv
-.\venv\Scripts\activate  # aktywacja
-pip install -r requirements.txt  # instalacja z pliku requierments.txt
-```
