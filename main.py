@@ -5,3 +5,4 @@ Pomyślałem dzisiaj, że pójdę na spacer
 """
 
 print(isinstance(2, int))
+
