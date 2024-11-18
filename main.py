@@ -1,8 +1,7 @@
-print("""
-Learn basics of Python, including:
-- variables defining
-- data structures
-- conditional instructions
-""")
+due_date = None  # set due date in the future
 
-"hello"
+"""
+Pomyślałem dzisiaj, że pójdę na spacer
+"""
+
+print(isinstance(2, int))
