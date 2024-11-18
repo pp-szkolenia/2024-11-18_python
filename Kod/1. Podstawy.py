@@ -1,4 +1,4 @@
-print("""
+("""
 Learn basics of Python, including:
 - variables defining
 - data structures
@@ -15,7 +15,33 @@ due_date = None  # set due date in the future
 # b = 2
 # print(a + b)
 
-print(type(due_date))
+(type(due_date))
 
-print(type(3))
+(type(3))
 
+# ---
+
+task_description = "Learn Python"
+print(task_description)
+
+print(1, 2, 3, 4, "hello", 5, 6)
+
+print("hello\nworld")
+
+
+print(1, 2, 3, 4, sep="-")
+
+length_of_hello = len("hello")
+
+round(3.5)
+
+round(3.425363, 2)
+
+x = 10
+
+x += 2    # x = x + 2
+x -= 4    # x = x - 4
+x *= 2    # x = x * 2
+x /= 3.5  # x = x / 3.5
+
+print(x)
