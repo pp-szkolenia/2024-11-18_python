@@ -1,7 +1,7 @@
-text = "Skopiuj treść tego zadania i przypisz do nowo utworzonej zmiennej text." \
-       " Następnie utwórz kilka nowych zmiennych: text_lower, text_upper, text_capitalize " \
-       "oraz text_title, do których przypiszesz odpowiednio przekształconą" \
-       " zmienną text i wyprintuj je."
+text = ("Skopiuj treść tego zadania i przypisz do nowo utworzonej zmiennej text. Następnie"
+        " utwórz kilka nowych zmiennych: text_lower, text_upper, text_capitalize oraz"
+        "text_title, do których przypiszesz odpowiednio przekształconą zmienną"
+        " text i wyprintuj je.")
 
 text_lower = text.lower()
 text_upper = text.upper()

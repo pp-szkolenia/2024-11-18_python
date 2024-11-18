@@ -1,8 +1,6 @@
-due_date = None  # set due date in the future
+available_categories = {"dev", "work", "work", "home"}
 
-"""
-Pomyślałem dzisiaj, że pójdę na spacer
-"""
+print(available_categories)
 
-print(isinstance(2, int))
-
+list_with_duplicates = ["dev", "dev", "work"]
+print(sorted(list(set(list_with_duplicates))))
