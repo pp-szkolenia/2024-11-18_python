@@ -218,3 +218,8 @@ sum(n_of_comments_in_tasks)
 17
 sum(n_of_comments_in_tasks) / len(n_of_comments_in_tasks)
 2.8333333333333335
+
+# ---
+simple_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(simple_list[1:6:2])
+print(simple_list[::-1])

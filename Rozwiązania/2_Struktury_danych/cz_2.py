@@ -42,5 +42,3 @@ print(sum(new_list))
 print(sum(new_list) / len(new_list))
 print(any(new_list))
 print(all(new_list))
-
-
