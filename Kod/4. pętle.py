@@ -109,3 +109,20 @@ for task in list_of_tasks:
         continue
 
     print(f"Doing: {task['description']}")
+
+
+for i in range(1, 4):
+    for j in range(1, 6):
+        print(f"{i} * {j} = {i * j}")
+
+    print("\n")
+
+
+users = ["Admin", "Andrzej", "Andżela"]
+tasks = ["Learn Python", "Do exercises", "Drink coffee"]
+
+for user in users:
+    for task in tasks:
+        print(f"{user} does: '{task}'")
+
+    print("\n")
