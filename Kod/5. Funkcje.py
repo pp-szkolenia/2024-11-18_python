@@ -9,3 +9,33 @@ def add_wrapper(a, b):
 
 add_wrapper(2, 3)
 
+
+def subtract(a, b=1):
+    return a - b
+
+
+print(
+    subtract(20, 5)
+)
+
+def create_task(description, tags=[]):
+    task = {"description": description, "tags": tags}
+    return task
+
+
+task = create_task("opis zadania")
+print(task)
+
+
+def function(x=None):
+    if x is None:
+        x = []
+
+    x.append(1)
+    print(x)
+
+
+function()
+function()
+function()
+function()

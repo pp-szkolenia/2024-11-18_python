@@ -1,16 +1,14 @@
-def subtract(a, b):
-    return a - b
+def add(a: int, b: int):
+    """
+    This function adds two numbers and returns
+    the result
+
+    >>> add(2, 3)
+    5
+    """
+    return a + b + 1
 
 
 print(
-    subtract(b=2, a=3)
+    add(1, 2)
 )
-
-
-
-# def multiply(a, b):
-#     result = a * b
-#     return result
-# multiplication_result = multiply(add(2, 3), 2)
-
-
