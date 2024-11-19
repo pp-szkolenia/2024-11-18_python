@@ -126,3 +126,53 @@ for user in users:
         print(f"{user} does: '{task}'")
 
     print("\n")
+
+
+
+list_of_tasks = [
+    {"description": "Learn Python", "is_completed": True, "priority": 3},
+    {"description": "Do exercises", "is_completed": False, "priority": 2},
+    {"description": "Drink coffee", "is_completed": True, "priority": 1},
+    {"description": "Finish my work", "is_completed": False, "priority": 2}
+]
+
+# result = []
+# for task in list_of_tasks:
+#     result.append(task["is_completed"])
+#
+# print(result)
+
+result = [task["is_completed"]
+          for task in list_of_tasks]
+print(result)
+
+print(
+    [{task['description']: task["is_completed"]} for task in list_of_tasks]
+)
+
+
+result = []
+for task in list_of_tasks:
+    if not task["is_completed"]:
+        result.append(task["description"])
+
+# print(result)
+
+result = [task["description"]
+          for task in list_of_tasks
+          if task["is_completed"]]
+print(result)
+
+
+result = []
+
+for task in list_of_tasks:
+    if not task["is_completed"]:
+        result.append(task["description"])
+    else:
+        result.append("Done")
+
+result = [task['description']
+          if not task["is_completed"] else "Done"
+          for task in list_of_tasks]
+print(result)
