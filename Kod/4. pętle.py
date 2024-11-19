@@ -45,3 +45,67 @@ for user in list_of_users:
 
     for character in "hello":
         print(character)
+
+
+task = {
+    "description": "Learn Python",
+    "assignee": "Andrzej",
+    "due_date": None,
+    "priority": 2,
+    "is_completed": False,
+    "tags": ["python", "dev"],
+    "comments": []
+}
+
+
+for param in task:
+    print(param)
+
+
+for key, value in task.items():
+    print(f"Key: {key}, value: {value}")
+
+i = 10
+
+while i > 0:
+    print(i)
+    i -= 1
+
+
+list_of_tasks = ["Learn Python", "Do exercises",
+                 "Drink coffee", "Finish my work"]
+
+while list_of_tasks:
+    # Complete the last task
+    list_of_tasks.pop()
+
+    print("To do:", list_of_tasks, "\n")
+
+i = 10
+
+while True:
+    print(i)
+    i -= 1
+
+    if i < 0:
+        break
+
+for number in [1, 2, 3, 4, 5, 6, 7, 8]:
+    if number % 2 == 0:
+        continue
+
+    print(number)
+
+
+list_of_tasks = [
+    {"description": "Learn Python", "priority": 3},
+    {"description": "Do exercises", "priority": 2},
+    {"description": "Drink coffee", "priority": 1},
+    {"description": "Finish my work", "priority": 2}
+]
+
+for task in list_of_tasks:
+    if task["priority"] < 2:
+        continue
+
+    print(f"Doing: {task['description']}")
