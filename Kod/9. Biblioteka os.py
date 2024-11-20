@@ -18,3 +18,20 @@ projects_path = "test_walk_1/projects"
 
 print(os.path.exists("functions.py"))
 
+
+import os
+import shutil
+
+os.mkdir("nowy_folder")
+os.rmdir("nowy_folder")
+
+os.makedirs("nowy_folder/podfolder")
+shutil.rmtree("nowy_folder")
+
+
+
+os.mknod("test.txt")
+
+os.mkdir("folder/subfolder")
+
+shutil.rmtree("folder")
