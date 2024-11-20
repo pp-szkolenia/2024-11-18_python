@@ -47,18 +47,27 @@ Quantifiers:
 ```
 """
 
+#
+# def find_pattners(pattern, text_to_search):
+#     pattern = re.compile(pattern)
+#     matches = pattern.finditer(text_to_search)
+#     for match in matches:
+#         print(match)
+#
+text = """#python #programowanie
+Chcę nauczyć się Pythona!"""
 
-def find_pattners(pattern, text_to_search):
-    pattern = re.compile(pattern)
-    matches = pattern.finditer(text_to_search)
-    for match in matches:
-        print(match)
 
+# print(re.sub(r"#\w+", "<tag>", text, 1))
 
-# find_pattners(".", text_to_search)
-# find_pattners(r"\D", text_to_search)
-# find_pattners(r"\w", text_to_search)
+# print(re.findall(r"#\w+", text))
 
-# find_pattners(r"\.", text_to_search)
-# find_pattners(r"\\", text_to_search)
-find_pattners(r"3\.5", text_to_search)
+# print(re.search(r"@\w+", text))
+# print(bool(re.search(r"#\w+", text)))
+
+text = '! abc@email.com dalej może być dowolny tekst ....'
+
+# print(re.match(r"\w+@\w+\.\w+", text))  # match porównuje pattern do początku stringa
+
+for item in re.finditer(r"\w+@\w+\.\w+", text):
+    print(item)
