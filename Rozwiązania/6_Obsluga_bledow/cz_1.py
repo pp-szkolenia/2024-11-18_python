@@ -1,10 +1,14 @@
 def modulo(a, b):
     try:
-        return a % b
+        result = a % b
     except ZeroDivisionError:
-        return None
+        result = None
+    else:
+        print("Operacja wykonana poprawnie")
+    finally:
+        return result
 
-print(modulo(2, 0))
+print(modulo(12, 0))
 
 
 def square_number():
@@ -13,16 +17,18 @@ def square_number():
         return number ** 2
     except TypeError:
         return None
+    else:
+        print("Operacje wykonana")
 
 
-def get_item_from_list(list_, index):
-    try:
-        return list_[index]
-    except IndexError:
-        return None
-
-
-print(get_item_from_list([1, 2, 3], 22))
-
-
-
+# def get_item_from_list(list_, index):
+#     try:
+#         return list_[index]
+#     except IndexError:
+#         return None
+#
+#
+# print(get_item_from_list([1, 2, 3], 22))
+#
+#
+#
