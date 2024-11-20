@@ -1,10 +1,13 @@
-from functions import a
+# from subpackage import my_module
+import subpackage  #.my_module
+import math_functions
+# from math_functions import add
 
 
-# print(add(1, 2))
 
-print(__name__)
+# print(dir([1, 2, 3]))
 
 
-if __name__ == '__main__':
-    print(a)
+# print(add(2, 54))
+
+# print(subpackage.function_from_module())
