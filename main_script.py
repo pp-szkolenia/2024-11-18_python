@@ -1,13 +1,9 @@
-# from subpackage import my_module
-import subpackage  #.my_module
-import math_functions
-# from math_functions import add
+import time
+from functions import modulo
 
 
+start = time.perf_counter()
+result = modulo(12, 5)
+end = time.perf_counter()
 
-# print(dir([1, 2, 3]))
-
-
-# print(add(2, 54))
-
-# print(subpackage.function_from_module())
+print("Czas wykonywania: ", end-start)
