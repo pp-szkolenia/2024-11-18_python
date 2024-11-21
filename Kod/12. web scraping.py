@@ -104,3 +104,6 @@ for i in range(5):
     next_page_url = quotes_url + sub_url
     response = requests.get(next_page_url)
     soup = BeautifulSoup(response.text, 'html.parser')
+
+
+requests.get(url, headers={"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"})
