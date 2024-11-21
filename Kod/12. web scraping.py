@@ -77,3 +77,30 @@ soup.find_all("p")[3].text                     # spośród wszystkich znacznikó
 soup.find("span").attrs["class"]               # znajdź pierwszy znacznik 'span' i wyciągnij nazwę jego klasy
 soup.find("h1").find("a")                      # znajdź znacznik "a" wewnątrz znacznika "h1"
 soup.find("div", {"attr_name": "attr_value"})  # znajdź znacznik "div" z konkretną wartością danego atrybutu
+
+# ---
+
+quotes_url = "https://quotes.toscrape.com/"
+response = requests.get(quotes_url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+quotes_list = []
+for i in range(5):
+    for quote in soup.find_all("div", class_="quote"):
+        single_quote = dict()
+
+        single_quote["text"] = quote.find("span", class_="text").text.replace('“', '').replace('”',
+                                                                                               '')
+
+        single_quote["author"] = quote.find("small", class_="author").text
+
+        tags = quote.find_all("a", "tag")
+        tags_texts = [t.text for t in tags]
+        single_quote["tags"] = tags_texts
+
+        quotes_list.append(single_quote)
+
+    sub_url = soup.find("li", class_="next").find("a").attrs["href"]
+    next_page_url = quotes_url + sub_url
+    response = requests.get(next_page_url)
+    soup = BeautifulSoup(response.text, 'html.parser')
