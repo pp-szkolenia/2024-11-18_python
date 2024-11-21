@@ -50,3 +50,30 @@ soup = BeautifulSoup(response.text, "html.parser")
 pprint(
     [item.text for item in soup.find_all("a", "tag")]
 )
+
+soup.find_all("a", class_="tag")
+
+
+soup.find_all("a")[3].attrs
+
+soup.find_all("div", {'itemtype': 'http://schema.org/CreativeWork'})
+
+soup.find_all("div", {'class': 'quote'})
+
+
+# ---
+
+url = "https://example.org"
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+
+
+soup.find("div")                               # znajdź pierwszy znacznik 'div' jaki napotkasz
+soup.find_all("a")                             # znajdź wszystkie znaczniki 'a'
+soup.find_all("a", "class_name")               # znajdź wszystkie znaczniki 'a' z klasą class_name
+soup.find_all("p")[3].text                     # spośród wszystkich znaczników 'p' weź ten o indeksie 3 i wyciągnij jego zawartość
+soup.find("span").attrs["class"]               # znajdź pierwszy znacznik 'span' i wyciągnij nazwę jego klasy
+soup.find("h1").find("a")                      # znajdź znacznik "a" wewnątrz znacznika "h1"
+soup.find("div", {"attr_name": "attr_value"})  # znajdź znacznik "div" z konkretną wartością danego atrybutu
