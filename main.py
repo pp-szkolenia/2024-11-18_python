@@ -50,6 +50,17 @@ def get_users():
     return {"result": users_data}
 
 
+@app.get("/tasks/{id_}")
+def get_single_task(id_: int):
+    target_task = get_item_by_id(tasks_data, id_)
+
+    if target_task is None:
+        message = {"error": f"Task with id={id_} does not exist"}
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=message)
+
+    return {"result": target_task}
+
+
 @app.get("/users/{id_}")
 def get_single_user(id_: int):
     target_user = get_item_by_id(users_data, id_)
