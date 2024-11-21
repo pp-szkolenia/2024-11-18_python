@@ -28,6 +28,13 @@ users_data = [
 ]
 
 
+def get_item_by_id(items_list, id_):
+    for item in items_list:
+        if item["id"] == id_:
+            return item
+    return None
+
+
 @app.get("/")
 def root():
     return {"message": "Hello world!!!"}
@@ -41,6 +48,12 @@ def get_tasks():
 @app.get("/users")
 def get_users():
     return {"result": users_data}
+
+
+@app.get("/users/{id_}")
+def get_single_user(id_: int):
+    target_user = get_item_by_id(users_data, id_)
+    return {"result": target_user}
 
 
 @app.post("/tasks")
