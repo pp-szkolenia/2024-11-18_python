@@ -1,16 +1,24 @@
-from fastapi import FastAPI, Body
+from pydantic import BaseModel
+from fastapi import FastAPI
 
 
 app = FastAPI()
 
+
+class TaskBody(BaseModel):
+    description: str
+    priority: int | None = None
+    is_completed: bool = False
+
+
 tasks_data = [
-    {"description": "Learn FastAPI", "priority": 2, "is_completed": False},
-    {"description": "Do exercises", "priority": 1, "is_completed": True}
+    {"id": 1, "description": "Learn FastAPI", "priority": 2, "is_completed": False},
+    {"id": 2, "description": "Do exercises", "priority": 1, "is_completed": True}
 ]
 
 users_data = [
-    {"username": "aaaa", "password": "bbbb", "is_admin": True},
-    {"username": "qwe", "password": "alalal", "is_admin": False}
+    {"id": 1, "username": "aaaa", "password": "bbbb", "is_admin": True},
+    {"id": 2, "username": "qwe", "password": "alalal", "is_admin": False}
 ]
 
 
@@ -30,8 +38,10 @@ def get_users():
 
 
 @app.post("/tasks")
-def create_task(body: dict = Body(...)):
-    new_task = body
+def create_task(body: TaskBody):
+    new_task = body.model_dump()
+    new_task["id"] = len(tasks_data) + 1
+
     tasks_data.append(new_task)
 
     return {"message": "New task added", "details": new_task}
