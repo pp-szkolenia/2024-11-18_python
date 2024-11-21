@@ -23,3 +23,30 @@ response = requests.get(url, params=params)
 data = response.json()
 # print(response.url)
 print(data)
+
+
+CITY = "Krakow"
+API_KEY = "7d0c48134ae346811fa50cf99109251f"  # wpisz swój klucz API
+
+my_url = f"http://api.openweathermap.org/data/2.5/forecast?q={CITY}&appid={API_KEY}&units=metric"
+
+response = requests.get(my_url)
+data = response.json()
+
+for item in data["list"]:
+    print(item["dt_txt"], item["main"]["temp"], sep=' | ')
+
+
+# -------------
+from pprint import pprint
+from bs4 import BeautifulSoup
+
+url = "https://quotes.toscrape.com/"
+
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+pprint(
+    [item.text for item in soup.find_all("a", "tag")]
+)
