@@ -1,0 +1,1 @@
+https://github.com/patrykpalej/FastAPI-Training-Demo
