@@ -1,14 +1,10 @@
-import requests
-from pprint import pprint
-from bs4 import BeautifulSoup
+import click
 
 
-url = "https://quotes.toscrape.com/"
+@click.command()
+def hello():
+    click.echo("hello world")
 
-response = requests.get(url)
 
-soup = BeautifulSoup(response.text, "html.parser")
-
-pprint(
-    [item.text for item in soup.find_all("a", "tag")]
-)
+if __name__ == "__main__":
+    hello()
